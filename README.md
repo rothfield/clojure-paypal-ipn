@@ -1,6 +1,8 @@
 clojure-paypal-ipn
 ==================
 
+For Henry.
+
 PayPal IPN handler for Clojure. Use with ring, compojure, or any clojure server env.
 
 Add this to your `:dependencies` in project.clj
