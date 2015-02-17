@@ -5,6 +5,7 @@
             :url "http://opensource.org/licenses/MIT"}
 
   :dependencies [[org.clojure/clojure "1.6.0"]
+                 [compojure "1.3.1"]
                  [clj-http "0.9.2"]]
   :source-paths ["src"]
 

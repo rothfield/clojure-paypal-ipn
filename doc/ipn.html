@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>IPN Simulator -  PayPal Developer</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../../../../css/pp.css">
+        <!-- css related to country selector dropdown -->
+        <link rel="stylesheet" href="../../../../css/bootstrap-formhelpers.css">
+        <link rel="stylesheet" href="../../../../css/bootstrap-formhelpers-countries.flags.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-TileImage" content="https://www.paypalobjects.com/webstatic/developer/favicons/pp144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp152.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp114.png">
+        <link rel="apple-touch-icon-precomposed" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp57.png">
+        <link rel="icon" href="https://www.paypalobjects.com/webstatic/developer/favicons/pp32.png" sizes="32x32">
+
+        <!-- END country selector -->
+        <!-- Including scripts in head, while non-ideal, ensures pages custom page scripts will run. -->
+        <script src="../../../../js/jquery-1.8.3.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/matchMedia.js"></script>
+
+        <!-- scripts related to country selector & available country sections in all products page -->
+        <script src="../../../../js/bootstrap-formhelpers-selectbox.js"></script>
+        <script src="../../../../js/bootstrap-formhelpers-countries.en_US.js"></script>
+        <script src="../../../../js/bootstrap-formhelpers-countries.js"></script>
+
+        <!--[if lt IE 9]>
+            <script src="../../../../js/respond.min.js"></script>
+        <![endif]-->
+	</head>
+
+    <body data-spy="scroll" data-target=".dev-docs-sidebar" id="docs-content">
+        <div class="mobile-nav" role="navigation">
+            <div class="nav-wrapper">
+                <ul class="">
+                    <li class="docs active">
+                        <a href="../../../../">Documentation</a>
+                        <ul>
+                            <li>
+                                <a href="../../../../api/">REST API</a>
+                            </li>
+                            <li>
+                                <a href="../../../">Classic APIs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dashboard">
+                        <a href="https://developer.paypal.com/webapps/developer/applications/myapps">Dashboard</a>
+                    </li>
+                    <li class="support">
+                        <a href="https://developer.paypal.com/webapps/developer/support">Support</a>
+                    </li>
+                    <li class="search">
+                        <form action="https://developer.paypal.com/webapps/developer/docs/search" method="get" id="mobile-nav-search" name="search" class="form-inline docs-search" role="form">
+                            <div class="form-group">
+                                <label for="mobile-q" class="sr-only">Enter Search</label>
+                                <div class="input-group">
+                                    <input name="q" value="" id="mobile-q" type="text" class="form-control q" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><span class="sr-only">Search</span><span class="icon-moon-search"></span></button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="hamburger-toggle">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand site-logo" href="https://developer.paypal.com/webapps/developer/index"><span class="sr-only">Paypal Developer Portal</span></a>
+                        </div>
+                        <nav class="collapse navbar-collapse" role="navigation">
+                            <ul class="nav navbar-nav">
+                                <li class="docs-nav active">
+                                    <a href="../../../../">Documentation</a>
+                                </li>
+                                <li class="dashboard-nav">
+                                    <a href="https://developer.paypal.com/webapps/developer/applications/myapps">Dashboard</a>
+                                </li>
+                                <li class="support-nav">
+                                    <a href="https://developer.paypal.com/webapps/developer/support">Support</a>
+                                </li>
+                                <li class="search-nav">
+                                    <form action="https://developer.paypal.com/docs/search" method="get" id="header-search" name="search" class="form-inline docs-search" role="form">
+                                        <div class="form-group">
+                                            <label for="headerq" class="sr-only">Enter Search</label>
+                                            <div class="input-group">
+                                                <input name="q" value="" id="headerq" type="text" class="form-control q" placeholder="Search">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="submit"><span class="sr-only">Search</span><span class="icon-moon-search"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+            <nav class="header-subnav">
+                <div class="container">
+                    <div class="row">
+                        <ul class="inline">
+                            <li class="rest-api">
+                                <a href="../../../../api/">REST API</a>
+                            </li>
+                            <li class="classic-api">
+                                <a href="../../../">Classic APIs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Begin docs item "IPN Simulator" last modified 2015-01-21 22:51:41 -0600 -->
+<div class="container" id="docsContainer">
+  <div class="row">
+  <div class="span2" id="docsNav">
+    <ul class="nav nav-list sidebar">
+      
+        
+<li class="nav-header">Classic APIs</li>
+
+<li><a href="../../../">API basics</a></li>
+
+<li><a href="../../../product-info/">Payment Products</a></li>
+
+<li><a href="../../../products/">Integration Guides</a></li>
+
+<li><a href="../../../api/">API References</a></li>
+<li class="pageHeadline secDivider"><a href="../../../release-notes/">API Version History</a></li>
+
+
+
+
+<li class="nav-header">Instant Payment Notification</li>
+
+<li><a href="../../gs_IPN/">Getting Started</a></li>
+
+<li><a href="../../ht_ipn/">How To's</a></li>
+<!--
+<li class="docIndent"><a href="/classic/ipn/ht_ipn/">How to IPN Messages</a></li>
+-->
+<li>Integration Guide</li>
+
+<li class="docIndent"><a href="../IPNIntro/">Overview</a></li>
+<li class="docIndent"><a href="../IPNImplementation/" class="sub2on" target="_self">Creating a Listener</a></li>
+<li class="docIndent"><a href="../IPNSetup/">Setup</a></li>
+<li class="docIndent"><a href="../IPNTesting/">Testing</a></li>
+<li class="docIndent"><a href="./">IPN Simulator</a></li>
+<li class="docIndent"><a href="../IPNOperations/">IPN History</a></li>
+<li class="docIndent"><a href="../IPNFMF/">IPN with FMF</a></li>
+<li class="docIndent"><a href="../IPNandPDTVariables/">IPN/PDT Variables</a></li>
+<li class="docIndent"><a href="../IPNPDTAnAlternativetoIPN/">Payment Data Transfer</a></li>
+
+
+
+
+
+
+      
+    </ul>
+  </div>
+  <div class="span10">
+    <div class="mainContainer">
+      <a name="ipn_simulator"></a>
+<h1>IPN simulator</h1>
+
+<p>The IPN simulator is a tool that can be used to send test IPN messages from the PayPal Sandbox to the URL at which your listener is running. The IPN simulator allows you verify that your listener is receiving IPN messages and handling them correctly. IPN simulator notifications include a <code>test_ipn</code> variable, which is not found in live IPN messages, so the IPN test messages can be distinguished from the real IPN messages.
+</p>
+
+<p><a name="listener_requirements"></a></p>
+<h3>IPN listener requirements</h3>
+<p>There are two basic requirements when using the IPN Simulator to send IPN messages from the PayPal Sandbox:
+</p>
+<ol>
+<li>You have to change the code in your listener to post your response to the Sandbox URL at <code>https://www.sandbox.paypal.com/cgi-bin/webscr</code>, instead of the live URL <code>https://www.paypal.com/cgi-bin/webscr</code>. This URL cannot be <code>localhost</code>. Unlike the enabling the IPN service in the Live IPN environment, the notification URL does <em>not</em> have to be set up in your PayPal account profile. </li>
+<li>Your IPN listener must be implemented and running on your web server.</li>
+
+<p><span class="label">Note</span> To use the IPN simulator, you must be logged into the <a href="https://developer.paypal.com">PayPal Developer</a> site, and your listener must be running at your notification URL on your web server.</p>
+</ol>
+<p><span class="label">Important</span> Because the listener page does not have a user interface, and runs in the background on your web server, it is extremely important that you have already performed local development testing on your listener to verify that the backend processes are working properly. If there are errors in your backend code, it will be extremely hard to verify that the IPN message validation process is working.</p>
+<p>Before testing with the IPN Simulator, we recommend you see the recommended IPN listener testing and verification procedures see <a href="../IPNTesting/">IPN Testing</a>.</p>
+
+<p><a name="using_the_simulator"></a></p>
+<h3>Using the IPN simulator</h3>
+<p>To use the IPN simulator, follow these steps:</p>
+<ol>
+<li>Go to the <a href="https://developer.paypal.com">PayPal Developer</a> site and log in.</li>
+<li>Click <strong>Applications</strong>.<br>
+A list of tools appears on the left side of the page.</li>
+<li>Click <strong>IPN simulator</strong>. <br>
+The IPN simulator appears.<br>
+<p><img src="https://www.paypalobjects.com/webstatic/en_US/developer/docs/ipn/ipn_simulator.png" alt="IPN Simulator" style="border:1px solid #eeeeee;"></p>
+</li>
+<li>In the <strong>IPN handler URL</strong> text box, enter the URL of your listener to which you want to send a test IPN notification message.</li>
+<li>From the <strong>Transaction type</strong> dropdown menu, select the type of transaction for which you want to send an IPN message.<br>
+An input form specific to the specified IPN message appears, with most fields populated with test data.<br>
+<span class="label">Note</span> For each type of IPN message, the simulator displays the most commonly used fields. To see all possible fields, click <strong>Show All Fields</strong> (at the bottom of the form).</li>
+<li>In the fields of the input form, enter the values you want to send in your test IPN message.</li>
+<li>Click <strong>Send IPN</strong> (at the bottom of the form).<br>
+The simulator sends a single copy of the specified IPN message to the specified listener and displays the results at the top of the page.</li>
+</ol>
+
+<p>The default messages the IPN simulator sends are valid. If your IPN listener receives the test message, you know the listener is properly installed on your web server. If your listener <a href="../IPNImplementation/#specs">responds correctly to such a message</a>, your listener should next receive a <code>VERIFIED</code> response message. If you do not receive any message, or if you receive an <code>INVALID</code> message from PayPal after responding to the original test IPN message, see the <a href="#simulator_troubleshooting">IPN Simulator troubleshooting tips</a>.</p>
+
+
+<p><a name="simulator_verification"></a></p>
+<h5 id="simulator">IPN simulator testing verification</h5>
+The IPN Simulator itself will display a message that says "IPN sent successfully" as long as the value set in the <b>IPN handler URL</b> field is a valid URL, even if there is no listener at the URL, or even if there is a listener there and it's not working correctly. So, the only way to verify if the IPN messages are being received and handled properly is to verify that your backend process received the message and processed it correctly. There are a few ways that you can verify if the messages are being received correctly:
+<ol>
+<li>You can simply open your database management software and view any database tables that may get added or modified by the listener backend code. </li>
+<li>You can create an IPN test verification page on your website that retrieves and displays database values that are added or modified by your listener backend code.</li>
+<li>You can use an existing page within your flow that already displays database values that would be modified by your listener backend code.</li>
+<li>You can isolate the verification code on your listener, and have it send you an email with all the data received, and the HTTP status that indicates <code>VERIFIED</code> or <code>INVALID</code>, or you can create a database table specifically for the testing to store that same data for verification.</li>
+</ol>
+<p>The last method is a good 'one step at a time' method that allows you to confirm that you are receiving and validating the messages correctly, before invoking or testing any of the backend code. When
+using this method, once you get an email (or test database table) that shows the correct values are received and the HTTP Status is set to <code>VERIFIED</code>, then you can remove the part that sends the email (or populates the database) and allow your backend code to run, because you have confirmed that your IPN messages are being received properly. </p>   
+
+<p>If you enter a URL that cannot be found, the IPN simulator will display a message that says "We could not send an IPN due to an HTTP error: 404: Not Found." If you enter an invalid URL, such as a URL that is not proceeded by "Http://" or "Https://", the simulator will display a message that says "Please enter a valid URL." There are a few other cases where the simulator will return and HTTP status code, other than the 200 success code. In those cases, you can look up the message on this page: <a href="../HTMLStatusCodes/">HTML Status Codes</a>.
+
+</p>
+<p><span class="label">Note</span> Entering a URL that includes <code>www.paypal.com</code> will not work. It will return an HTTP status code in the 300 range.</p>
+
+<a name="simulator_troubleshooting"></a>
+<h3>IPN simulator troubleshooting</h3>
+This troubleshooting is for where the IPN simulator is displaying a message that says "IPN sent successfully," but you are not able to validate that the message content was received and/or you are receviing HTTP status of <code>INVALID</code>, rather than the expected <code>VERIFIED</code> status.
+
+<ol>
+<li>Confirm that the code in your listner is set to post your response to the Sandbox URL at <code>https://www.sandbox.paypal.com/cgi-bin/webscr</code>, instead of the live URL <code>https://www.paypal.com/cgi-bin/webscr</code>.</li>
+<li>Confirm that your listener page is activly running and ready to receive IPN messages. Repeat the <a href="../IPNTesting/#local">local development testing</a> on the listener, if necessary to confirm that the page is running.</li>
+<li>Isolate the IPN message verification code on your page, and comment out all the backend processing, similar to the IPN code samples at: <a href="https://github.com/paypal/ipn-code-samples" target="_blank">IPN code samples</a>. This will allow you to more easily test and verify the message verification code, without depending upon your
+backend processing to work properly. When you do this, you need to use some type of method to allow you to verify that the listener is working. The recommended 
+method to do this is to create a database table specifically for the testing. Then to store the HTTP status returned from PayPal and possibly also some or all of the 
+expected IPN message values. Then when you can look at the tables after sending IPN simulator messages, to verify if the message processing works or not. If it's
+still not working as expected, you should do local testing on your listener page to verify that the page is sending values to your test database table.</li>
+<li>Everthing seems to be workikng, but you are still receiving the HTTP status of <code>INVALID</code> and you have confirmed that your listener
+ code is set to post your response to the Sandbox URL at <code>https://www.sandbox.paypal.com/cgi-bin/webscr</code>. In this case the problem is most likely that your
+ listener is not sending a properly formatted reply string to PayPal. That string needs to contain the unaltered message to send back to PayPal; the message must contain the same fields (in the same order) as the original message and be character encoded in the same way as the original message, and must be preceded with a <code>cmd=_notify-validate</code> variable. 
+ </li>
+</ol>
+For further troubleshooting, see <a href="../IPNTesting/#id091GFE00WY4">IPN Troubleshooting Tips</a>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- End docs item "IPN Simulator" -->
+
+
+            <div class="footer span12">
+                <p class="copyright">Copyright © 1999 - 2014 PayPal. All rights reserved.</p>
+                <ul class="footerNav">
+                    <li>
+                        <a target="_new" href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" class="scTrack:privacy-policy">Privacy policy</a>
+                    </li>
+                    <li>
+                        <a target="_new" href="https://www.paypal.com/webapps/mpp/ua/legalhub-full" class="scTrack:legal-agreements">Legal agreements</a>
+                    </li>
+                    <li>
+                        <a target="_new" href="https://www.paypal.com/us/webapps/helpcenter/helphub/home/">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="docsScroller">
+            <a href="#" class="gotoTop hide" style="display: none;"></a>
+        </div>
+
+        <script src="../../../../js/smooth-scroll.js"></script>
+        <script src="../../../../js/jquery.scrollstop.js"></script>
+        <script src="../../../../js/prettify/prettify.js"></script>
+        <script src="../../../../js/paypal-docs.js"></script>
+        <script src="../../../../components/requirejs/require.js"></script>
+        <script>
+            require(['/docs/js/main.js'], function(config) {
+                require(['app/mobile']);
+            });
+        </script>
+
+        <script type="text/javascript">
+            var id = "";
+
+            if (location.hostname == "developer.paypal.com") {
+                id = "UA-37159521-1";
+            } else {
+                id = "UA-37419067-1";
+            }
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', id]);
+            _gaq.push(['_trackPageview']);
+
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script src="https://www.paypalobjects.com/pa/js/pa.js"></script>
+
+    </body>
+</html>

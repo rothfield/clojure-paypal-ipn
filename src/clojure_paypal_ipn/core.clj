@@ -20,6 +20,7 @@
                         (not (contains? ipn-data key))) ipn-must-have-keys))))
 
 (defn ask!-paypal [req-body sandbox?]
+  ;;https://www.sandbox.paypal.com/cgi-bin/webscr, instead of the live URL https://www.paypal.com/cgi-bin/webscr
   (try
     (http-client/post (str "https://www." (if sandbox? "sandbox." "") "paypal.com/cgi-bin/webscr")
                       {:headers {"Connection"  "Close"
